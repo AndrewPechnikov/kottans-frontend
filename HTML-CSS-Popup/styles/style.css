@@ -1,16 +1,66 @@
 
-.header{
+
+
+
+
+*, *::before, *::after{
+  outline: tomato solid 1px;
+  padding: 0px 0px;
+}
+
+body{
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+
+.flex-header{
+    height: 75px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    background-color: darkgray;
 }
 
 .navigation{
     display: flex;
     justify-content: space-around;
+    gap: 50px;
+    margin-right: 50px;
 }
 
 .navigation > *{
-    margin-right: 10px;
+    
+}
+
+.menu__btn{
+  position: absolute;
+  top: calc(75px/2 - 15px);
+
+}
+
+.hamburger-menu{
+  position: relative;
+}
+
+.container{
+  padding: 0 50px;
+}
+
+.logo{
+  margin-right: 1000px;
+}
+
+.navigation > a{
+  display: inline;
+  height: 75px;
+  padding-top: calc(75px/2 - 10px);
+  cursor: pointer; 
+  text-decoration: none;
+  color: inherit;
+  
 }
 
 
@@ -39,6 +89,7 @@
 /* скрываем чекбокс */
 #menu__toggle {
     opacity: 0;
+    width: 30px;
   }
   /* стилизуем кнопку */
   .menu__btn {
@@ -51,28 +102,27 @@
 
   /* контейнер меню */
 .menu__box {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    
+    
+    gap: 10px;
     position: absolute;
     visibility: hidden;
-    top: 0;
-    left: -100%;
-    width: 300px;
-    height: 100%;
     margin: 0;
-    padding: 80px 0;
+    width: 200px;
+    left: -85px;
+    padding: 15px 15px;
     list-style: none;
     text-align: center;
     background-color: #ECEFF1;
-    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+    
   }
   /* элементы меню */
   .menu__item {
     display: block;
     padding: 12px 24px;
-    color: #333;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    font-weight: 600;
+    color: inherit;
     text-decoration: none;
   }
   .menu__item:hover {
@@ -84,14 +134,14 @@
 
   #menu__toggle:checked ~ .menu__box {
     visibility: visible;
-    left: 0;
+    top: 100%;
   }
 
 
 
 .menu__box {
-  transition-duration: .25s;
+  /* transition-duration: .25s; */
 }
 .menu__item {
-  transition-duration: .25s;
+  /* transition-duration: .25s; */
 }
