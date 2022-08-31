@@ -8,6 +8,15 @@
   padding: 0px 0px;
 }
 
+
+p{
+  margin: 0 ;
+}
+
+li{
+  margin: 0;
+}
+
 body{
   color: #333;
   font-family: 'Roboto', sans-serif;
@@ -119,9 +128,8 @@ body{
     
   }
   /* элементы меню */
-  .menu__item {
+  .menu__item > a {
     display: block;
-    padding: 12px 24px;
     color: inherit;
     text-decoration: none;
   }
