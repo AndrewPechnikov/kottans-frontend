@@ -1,22 +1,26 @@
 
 
 
-
-
 *, *::before, *::after{
   outline: tomato solid 1px;
   padding: 0px 0px;
 }
 
+.container{
+  padding: 0 200px;
+}
 
-
-p{
+p,li{
   margin: 0 ;
 }
 
 li{
-  margin: 0;
   list-style-type: none;
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
 }
 
 body{
@@ -30,7 +34,6 @@ body{
 .flex-header{
     height: 75px;
     display: flex;
-    justify-content: center;
     align-items: center;
     background-color: darkgray;
 }
@@ -43,52 +46,35 @@ body{
 }
 
 .navigation > *{
-    
-}
-
-.menu__btn{
   display: flex;
   height: 75px;
+  align-items: center;
   cursor: pointer;
-
 }
+
+
 
 .hamburger-menu{
   position: relative;
-  
 }
 
-.container{
-  padding: 0 50px;
-}
+
 
 .logo{
-  margin-right: 1000px;
+  margin-right: auto;
 }
 
-.navigation > a{
-  display: inline;
-  height: 75px;
-  padding-top: calc(75px/2 - 10px);
-  cursor: pointer; 
-  text-decoration: none;
-  color: inherit;
-  
-}
+
 
 
 
   /* контейнер меню */
 .menu__box {
-    display: flex;
-    /* flex-direction: column; */
-    flex-wrap: wrap;
-
-    
-    
+    display: none;
+    flex-wrap: wrap;   
     gap: 10px;
     position: absolute;
-    visibility: hidden;
+
     margin: 0;
     width: 220px;
     left: -85px;
@@ -96,13 +82,13 @@ body{
     list-style: none;
     text-align: center;
     background-color: #ECEFF1;
+    height: 320px;
+    top: 100%;
     
   }
   /* элементы меню */
   .menu__item > a {
     display: block;
-    color: inherit;
-    text-decoration: none;
     width: 90px;
   }
 
@@ -111,6 +97,10 @@ body{
     
   }
   .menu__item:hover {
+    background-color: #CFD8DC;
+  }
+
+  .menu__item--more:hover {
     background-color: #CFD8DC;
   }
 
@@ -126,10 +116,9 @@ body{
 
 
   .menu__box:target {
-    visibility: visible;
-    top: 100%;
+    display: flex;
+    
   }
-
 
   .menu__box:target ~ .menu__open{
     display: none;
@@ -146,22 +135,21 @@ body{
 
   .menu__box--more {
     position: absolute;
-    /* display: flex; */
-    flex-direction: column;
+    display: none;
+
     flex-wrap: wrap;  
     gap: 10px;
     margin: 0;
-    width: 220px;
+    width: 250px;
     left: -85px;
     top: 75px;
     padding: 15px 15px;
     list-style: none;
     text-align: center;
     background-color: #ECEFF1;
-    width: 220px;
-  
-
     display: none;
+    height: 300px;
+    overflow: auto;
     
    }
 
@@ -172,7 +160,7 @@ body{
 
    
   .menu__box--more:target ~ .menu__close{
-    display: block;
+    display: flex;
   }
 
 
@@ -192,15 +180,13 @@ body{
 
 .menu__item--more > a {
   display: block;
-  color: inherit;
-  text-decoration: none;
   width: 90px;
-
+  
 }
 
 .menu__btn--more{
   display: block;
-  cursor: pointer;
-  position: relative;
-  width: 100%;
+
+  
+
 }
