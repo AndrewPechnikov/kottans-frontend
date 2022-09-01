@@ -9,12 +9,14 @@
 }
 
 
+
 p{
   margin: 0 ;
 }
 
 li{
   margin: 0;
+  list-style-type: none;
 }
 
 body{
@@ -76,37 +78,6 @@ body{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* скрываем чекбокс */
-#menu__toggle {
-
-    opacity: 0;
-    width: 30px;
-    z-index: -1;
-    position: absolute;
-  }
-
-
   /* контейнер меню */
 .menu__box {
     display: flex;
@@ -143,12 +114,70 @@ body{
     background-color: #CFD8DC;
   }
 
+  .hamburger-menu > a{
+    display: block;
+    width: 30px;
+    height: 30px;
+  }
+
+  .hamburger-menu > .menu__close{
+    display: none;
+  }
 
 
-
-  #menu__toggle:checked ~ .menu__box {
+  .menu__box:target {
     visibility: visible;
     top: 100%;
+  }
+
+
+  .menu__box:target ~ .menu__open{
+    display: none;
+  }
+
+  .menu__box:target ~ .menu__close{
+    display: block;
+  }
+
+
+
+
+ 
+
+  .menu__box--more {
+    position: absolute;
+    /* display: flex; */
+    flex-direction: column;
+    flex-wrap: wrap;  
+    gap: 10px;
+    margin: 0;
+    width: 220px;
+    left: -85px;
+    top: 75px;
+    padding: 15px 15px;
+    list-style: none;
+    text-align: center;
+    background-color: #ECEFF1;
+    width: 220px;
+  
+
+    display: none;
+    
+   }
+
+   .menu__box--more:target {
+    display: flex;
+   }
+
+
+   
+  .menu__box--more:target ~ .menu__close{
+    display: block;
+  }
+
+
+  .menu__box--more:target ~ .menu__open{
+    display: none;
   }
 
 
@@ -161,22 +190,11 @@ body{
 }
 
 
-.menu__item--more{
-  width: 100;
-
-}
-
 .menu__item--more > a {
   display: block;
   color: inherit;
   text-decoration: none;
   width: 90px;
-}
-
-#menu__toggle--more{
-  opacity: 0;
-  z-index: -1;
-  position: absolute;
 
 }
 
@@ -184,58 +202,5 @@ body{
   display: block;
   cursor: pointer;
   position: relative;
-  /* top:0px ; */
-}
-
-
-.menu__box--more {
-  display: flex;
-  flex-wrap: wrap;
-
-  
-  
-  gap: 10px;
-  position: absolute;
-  visibility: hidden;
-  margin: 0;
-  width: 220px;
-  left: -85px;
-  top: 350px;
-  padding: 15px 15px;
-  list-style: none;
-  text-align: center;
-  background-color: #ECEFF1;
-}
-  
-
-#menu__toggle--more:checked ~.menu__box--more {
-  visibility: visible;
-  
-}
-
-
-
-/* #menu__toggle:not(:checked) ~ .menu__box--more {
-  visibility: hidden; 
-  
-} */
-
-
-#menu__toggle--more:checked ~.menu__btn--more {
-  /* opacity: 0; */
-  /* z-index: -1; */
-  position: absolute;
-  /* top: 30px; */
-}
-
-
-.menu__btn--empty{
-  z-index: 999;
-  position: absolute;  
-  top: -75px;
-  height: 75px;
-  width:30px
-  
-  
-
+  width: 100%;
 }
