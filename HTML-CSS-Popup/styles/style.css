@@ -2,7 +2,7 @@
 
 
 *, *::before, *::after{
-  outline: tomato solid 1px;
+  /* outline: tomato solid 1px; */
   padding: 0px 0px;
 }
 
@@ -24,9 +24,9 @@ a{
 }
 
 body{
-  color: #333;
+  color: #000;
   font-family: 'Roboto', sans-serif;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 600;
 }
 
@@ -35,7 +35,7 @@ body{
     height: 75px;
     display: flex;
     align-items: center;
-    background-color: darkgray;
+    background-color: #a0e5a5;
 }
 
 .navigation{
@@ -50,8 +50,17 @@ body{
   height: 75px;
   align-items: center;
   cursor: pointer;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
+.navigation > *:hover{
+background-color: #9d9ae8;
+}
+
+.navigation > *:focus{
+  background-color: #9d9ae8;
+  }
 
 
 .hamburger-menu{
@@ -76,38 +85,62 @@ body{
     position: absolute;
 
     margin: 0;
-    width: 220px;
+    width: 250px;
     left: -85px;
     padding: 15px 15px;
     list-style: none;
     text-align: center;
     background-color: #ECEFF1;
-    height: 320px;
+    height: 365px;
     top:100%;
+
+    border: 3px solid darkslategray;
+    border-top: 0px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     
 
     transform: translatey(-400px);
     transition-property: transform;
     transition-duration: 1000ms;
     z-index: -3;
+
+    font-size: 20px;
     
   }
   /* элементы меню */
   .menu__item > a {
     display: block;
-    width: 90px;
+    padding: 5px;
+    border: 1px solid darkslategray;
+    border-radius: 10px;
+    
+    
   }
+
+  .menu__item{
+    width: 100px;
+  }
+
 
   .menu__item > a > img{
     justify-self: center;
     
   }
-  .menu__item:hover {
-    background-color: #CFD8DC;
+  .menu__item :hover  {
+    background-color: #9d9ae8;
   }
 
-  .menu__item--more:hover {
-    background-color: #CFD8DC;
+  .menu__item :focus {
+    background-color: #9d9ae8;
+  }
+
+  .menu__item--more :hover {
+    background-color: #9d9ae8;
+  }
+
+  .menu__item--more :focus {
+    background-color: #9d9ae8;
   }
 
   .hamburger-menu > a{
@@ -149,27 +182,36 @@ body{
     flex-wrap: wrap;  
     gap: 10px;
     margin: 0;
-    width: 250px;
+    width: 270px;
     left: -85px;
     top:100%;
     padding: 15px 15px;
     list-style: none;
     text-align: center;
     background-color: #ECEFF1;
-    height: 300px;
+    height: 365px;
     overflow: auto;
+
+
+    
+    border: 3px solid darkslategray;
+    border-top: 0px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 
     transform: translatey(-400px);
     transition-property: transform;
     transition-duration: 1000ms;
     z-index: -2;
+
+    font-size: 20px;
  
     
    }
 
    .menu__box--more:target {
     display: flex;
-    transform: translateY(0);
+    transform: translateY(0);  
     transition-duration: 10ms;
    }
 
@@ -190,9 +232,13 @@ body{
 
 
 
-.menu__item--more > a {
+.menu__item--more {
   display: block;
-  width: 90px;
+  width: 100%;
+  padding: 2px;
+  padding: 5px;
+  border: 1px solid darkslategray;
+  border-radius: 10px;
   
 }
 
